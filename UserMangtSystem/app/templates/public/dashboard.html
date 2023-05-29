@@ -1,0 +1,32 @@
+{% extends 'public/templates/public_dashboard_template.html' %}
+
+{% block main %}
+
+<div class="container my-3">
+  <div><h3 class="d-flex justify-content-center">
+    {% if session.get('user_id') %}
+
+    <b>Welcome {{session.username}}</b>
+
+    {% endif %}
+</h3></div>
+  <div class= "row">  
+    <div class= "col-xl-4 col-lg-4 col-md-6 col-sm-12 my-2">
+      <a href="/dashboard"><button class="btn btn-info">User Data</button></a>
+    </div>
+      <div class= "col-xl-4 col-lg-4 col-md-6 col-sm-12 my-2">
+        <a href="/change_password"><button class="btn btn-warning">change password</button></a>
+
+    </div>
+        <div class= "col-xl-4 col-lg-4 col-md-6 col-sm-12 my-2">
+        <a href="/dashboard"><button class="btn btn-danger">Account</button></a>
+
+    </div>
+  </div>
+</div>
+
+{% endblock  %}
+
+
+
+

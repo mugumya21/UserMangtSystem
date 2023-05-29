@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename = "css/style.css")}}">
+
+<body>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+
+            {% with messages = get_flashed_messages(category_filter = ["danger"]) %} {% if messages %} {% for message in messages %}
+
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+                    <p class="row d-flex justify-content-center"> {{ message }}</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+
+
+                {% endfor %} {% endif %} {% endwith %}
+            </div>
+
+            {% with messages = get_flashed_messages(category_filter = ["warning"]) %} {% if messages %} {% for message in messages %}
+
+
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+                    <p class="row d-flex justify-content-center"> {{ message }}</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+
+
+                {% endfor %} {% endif %} {% endwith %}
+            </div>
+                {% with messages = get_flashed_messages(category_filter = ["success"]) %} {% if messages %} {% for message in messages %}
+
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+                    <p class="row d-flex justify-content-center"> {{ message }}</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+
+
+                {% endfor %} {% endif %} {% endwith %}
+
+
+            
+            <div class="col-sm-4">
+
+            </div>
+
+        </div>
+    </div>
+
+<div class="container my-3">
+    <div class="row d-flex justify-content-center">
+        <h1> Admin Login</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                    <form action = "/admin/admin_login"  method = "POST" enctype="multipart/form-data" >
+                        <div class = "form-group">
+                            <label><b>Enter your Username: </b></label>
+                            <input  class = "form-control "  type = "text", name = "username" id="username"></input>                
+                            <label><b>Enter your Password: </b></label>
+                            <input class = "form-control" type = "password", name = "password" id="Password"></input>
+                        </div>
+                        <div >
+                            <button type="submit" class ="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             </div>
+    </div>
+</div>
+
+</body>

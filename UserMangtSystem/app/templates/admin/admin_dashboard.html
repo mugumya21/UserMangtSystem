@@ -1,0 +1,47 @@
+{% extends 'admin/templates/admin_template.html' %}
+
+{% block main %}
+
+<div class="container ">
+  <h2 class="d-flex justify-content-center mb-5">User Details</h2>
+  <div class="my-2">
+   <div class="table-responsive">
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>fname</th>
+          <th>lname</th>
+          <th>username</th>
+          <th>edu</th>
+          <th>email</th>
+          <th>status</th>       
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.fname}}</td>
+          <td>{{user.lname}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.edu}}</td>
+          <td>{{user.email}}</td>
+          <td>{% if user.status == 1 %}
+              <p><b>Approved</b></p>
+               {% else %}
+               <a href="/admin/approve_user/{{user.id}}">
+                <button class="btn btn-warning" > Approve</button>
+              </a>
+        {% endif %}
+
+         {% endfor %}</td>     
+        </tr>
+
+      </tbody>
+    </table>
+   </div>
+   </div>
+
+ </div>
+{% endblock  %}

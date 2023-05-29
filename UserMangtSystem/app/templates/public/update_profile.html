@@ -1,0 +1,45 @@
+{% extends 'public/templates/public_template.html' %} {% block main %}
+
+<div class="container my-3">
+    <div class="row d-flex justify-content-center">
+        <h1> Update Profile</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                    <form action = "/update_profile"  method = "POST" enctype="multipart/form-data" >
+                        <div class = "form-group">
+                            <label><b>Enter your First Name: </b></label>
+                            <input  class = "form-control"  type = "text", name ="fname" id="fname"></input>
+                            <label><b>Enter your Last Name: </b></label>
+                            <input  class = "form-control "  type = "text", name = "lname" id="lname"></input>
+                            <label><b>Enter your Username: </b></label>
+                            <input  class = "form-control "  type = "text", name = "username" id="username"></input>
+                            <label><b>Enter your Education Level: </b></label>
+                            <input  class = "form-control"  type = "text", name="edu" id="edu"></input>
+                            <label><b>Enter your Email: </b></label>
+                            <input class = "form-control" type = "text", name = "email" id="email"></input>
+                            </div>
+                            <label><b>Enter your Password: </b></label>
+                            <input class = "form-control" type = "password", name = "password" id="Password"></input>
+                            <br>
+                        <div >
+                            <button type="submit" class ="btn btn-primary">update</button>
+
+                        </div>
+
+                       
+
+
+
+                    </form>
+                </div>
+            </div>
+             </div>
+    </div>
+</div>
+
+        {% endblock  %}

@@ -1,0 +1,7 @@
+Questions to do;
+1. How to check if the data is saved in the db
+2. How to add in logics in the system
+3. how to add the sidenav bar 
+4. how to add in cards after doing having the nav bar
+5. How to filter data 
+6. how to create dynamic users
